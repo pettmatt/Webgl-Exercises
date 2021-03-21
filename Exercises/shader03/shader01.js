@@ -60,12 +60,16 @@ const sketch = ({ context }) => {
 
       // Create a mask from the circles
       // Animation: sin() is used to resizing circles based on their placement in the x-axis.
-      float mask = step(0.25 + sin(time + vUv.x) * 0.25 , dis);
+      float mask = step(0.25 + sin(time + vUv.x) * 0.25, dis);
 
       // Invert the mask
       mask = 1.0 - mask;
 
-      gl_FragColor = vec4(vec3(mask), 1.0);
+      // Make a mix of colours for the masked circles
+      // 1.0 white -> 0.0 black
+      vec3 fragColor = mix(color, vec3(1.0), mask);
+
+      gl_FragColor = vec4(vec3(fragColor), 1.0);
     }
   `;
 
@@ -73,7 +77,7 @@ const sketch = ({ context }) => {
   const material = new THREE.ShaderMaterial({
     uniforms: {
       time: { value: 0 },
-      color: { value: new THREE.Color('#fff')}
+      color: { value: new THREE.Color('pink')}
     },
     vertexShader,
     fragmentShader
