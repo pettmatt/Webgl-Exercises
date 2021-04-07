@@ -8,7 +8,7 @@ const canvasSketch = require('canvas-sketch');
 
 const settings = {
   dimensions: 'A4',
-  units: 'cm',
+  units: 'm',
   // How good quality should the printed image be
   //pixelsPerInch: 300,
   //orientation: 'landscape',
@@ -43,19 +43,30 @@ const sketch = ({ context }) => {
 
   const loader = new THREE.TextureLoader();
 
+  const sunTexture = loader.load('https://www.solarsystemscope.com/textures/download/8k_sun.jpg');
   const earthTexture = loader.load('https://raw.githubusercontent.com/mattdesl/workshop-webgl-glsl/master/src/demos/earth.jpg');
   const moonTexture = loader.load('https://raw.githubusercontent.com/mattdesl/workshop-webgl-glsl/master/src/demos/moon.jpg');
 
+  const sunMaterial = new THREE.MeshStandardMaterial({
+    roughness: 1,
+    metalness: 0,
+    map: sunTexture
+  });
+
+  const sunMesh = new THREE.Mesh(geometry, sunMaterial);
+  sunMesh.scale.setScalar(10);
+  scene.add(sunMesh);
+
   // Setup a material
-  const material = new THREE.MeshStandardMaterial({
+  const earthMaterial = new THREE.MeshStandardMaterial({
     roughness: 1,
     metalness: 0,
     map: earthTexture
   });
 
   // Setup a mesh with geometry + material
-  const mesh = new THREE.Mesh(geometry, material);
-  scene.add(mesh);
+  const earthMesh = new THREE.Mesh(geometry, earthMaterial);
+  scene.add(earthMesh);
 
   const moonGroup = new THREE.Group();
 
@@ -90,7 +101,7 @@ const sketch = ({ context }) => {
     },
     // Update & render your scene here
     render({ time }) {
-      mesh.rotation.y = time * 0.15;
+      earthMesh.rotation.y = time * 0.15;
       moonMesh.rotation.y = time * 0.035;
       moonGroup.rotation.y = time * 0.35;
 

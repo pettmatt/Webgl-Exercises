@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Sun",
+    "size": 1391000.0,
+    "distance": 0.0,
+    "speed": 0.0,
+    "rotationSpeed": 0.0,
+    "orbits": [false, ""],
+    "Moons": []
+  },
+  {
+    "name": "Mercury",
+    "size": 4879.0,
+    "distance": 58.168,
+    "speed": 47.87,
+    "rotationSpeed": 10.83,
+    "orbits": [true, "sun"],
+    "Moons": [
+      { 
+        "name": "",
+        "distance": 0.0,
+        "rotationSpeed": 0.0
+      }
+    ]
+  },
+  {
+    "name": "Venus",
+    "size": 12104.0,
+    "distance": 108.415,
+    "speed": 35.02,
+    "rotationSpeed": 6.52,
+    "orbits": [true, "sun"],
+    "Moons": [
+      { 
+        "name": "",
+        "distance": 0.0,
+        "rotationSpeed": 0.0
+      }
+    ]
+  },
+  {
+    "name": "Earth",
+    "size": 12756.0,
+    "distance": 149.767,
+    "speed": 29.78,
+    "rotationSpeed": 1674,
+    "orbits": [true, "sun"],
+    "Moons": [
+      { 
+        "name": "Moon",
+        "distance": 0.0,
+        "rotationSpeed": 0.0
+      }
+    ]
+  },
+  {
+    "name": "Mars",
+    "size": 6792.0,
+    "distance": 242.564,
+    "speed": 24.077,
+    "rotationSpeed": 866,
+    "orbits": [true, "sun"],
+    "Moons": [
+      { 
+        "name": "",
+        "distance": 0.0,
+        "rotationSpeed": 0.0
+      }
+    ]
+  },
+  {
+    "name": "Jupiter",
+    "size": 142984.0,
+    "distance": 757.583,
+    "speed": 13.07,
+    "rotationSpeed": 45583,
+    "orbits": [true, "sun"],
+    "Moons": [
+      { 
+        "name": "",
+        "distance": 0.0,
+        "rotationSpeed": 0.0
+      }
+    ]
+  },
+  {
+    "name": "Saturn",
+    "size": 120536.0,
+    "distance": 1491.653,
+    "speed": 9.69,
+    "rotationSpeed": 36840,
+    "orbits": [true, "sun"],
+    "Moons": [
+      { 
+        "name": "",
+        "distance": 0.0,
+        "rotationSpeed": 0.0
+      }
+    ]
+  },
+  {
+    "name": "Uranus",
+    "size": 51118,
+    "distance": 2955.962,
+    "speed": 6.81,
+    "rotationSpeed": 14794,
+    "orbits": [true, "sun"],
+    "Moons": [
+      { 
+        "name": "",
+        "distance": 0.0,
+        "rotationSpeed": 0.0
+      }
+    ]
+  },
+  {
+    "name": "Neptune",
+    "size": 49528.0,
+    "distance": 4476.753,
+    "speed": 5.43,
+    "rotationSpeed": 9719,
+    "orbits": [true, "sun"],
+    "Moons": [
+      { 
+        "name": "",
+        "distance": 0.0,
+        "rotationSpeed": 0.0
+      }
+    ]
+  },
+  {
+    "name": "Pluto",
+    "size": 10.0,
+    "distance": 0.0,
+    "speed": 4.74,
+    "rotationSpeed": 123.21,
+    "orbits": [true, "sun"],
+    "Moons": [
+      { 
+        "name": "",
+        "distance": 0.0,
+        "rotationSpeed": 0.0
+      }
+    ]
+  }
+]
