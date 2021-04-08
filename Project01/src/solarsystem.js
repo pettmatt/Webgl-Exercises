@@ -1,10 +1,10 @@
-// Ensure ThreeJS is in global scope for the 'examples/'
 global.THREE = require('three');
 
 // Include any additional ThreeJS examples below
 require('three/examples/js/controls/OrbitControls');
 
 const canvasSketch = require('canvas-sketch');
+const planets = require('./planets.json');
 
 const settings = {
   dimensions: 'A4',
@@ -28,7 +28,7 @@ const sketch = ({ context }) => {
   renderer.setClearColor('#000', 1);
 
   // Setup a camera
-  const camera = new THREE.PerspectiveCamera(50, 1, 0.01, 100);
+  const camera = new THREE.PerspectiveCamera(500, 1, 0.01, 200);
   camera.position.set(3, 3, -5);
   camera.lookAt(new THREE.Vector3());
 
@@ -47,15 +47,34 @@ const sketch = ({ context }) => {
   const earthTexture = loader.load('https://raw.githubusercontent.com/mattdesl/workshop-webgl-glsl/master/src/demos/earth.jpg');
   const moonTexture = loader.load('https://raw.githubusercontent.com/mattdesl/workshop-webgl-glsl/master/src/demos/moon.jpg');
 
-  const sunMaterial = new THREE.MeshStandardMaterial({
-    roughness: 1,
-    metalness: 0,
-    map: sunTexture
-  });
+  // Create planets from the data inside of planets.json
+  planets.forEach(planet => {
+    const geom = new THREE.SphereGeometry( planet.size * 0.1, 32, 16);
+    console.log(geom)
 
-  const sunMesh = new THREE.Mesh(geometry, sunMaterial);
-  sunMesh.scale.setScalar(10);
-  scene.add(sunMesh);
+    const sunMaterial = new THREE.MeshStandardMaterial({
+      roughness: 1,
+      metalness: 0,
+      map: sunTexture//planet.texture
+    });
+
+    // Creating mesh with texture
+    const mesh = new THREE.Mesh(geom, sunMaterial);
+    mesh.position.set(planet.distance*1000, 1, 0);
+
+    console.log(planet.distance)
+
+    // If planet orbits a star create orbital group for it
+    if(planet.orbits[0] === true) {
+      let orbitalGroup = new THREE.Group();
+      scene.add(orbitalGroup);
+    }
+
+    // else let it be the center of the solar system
+    else {
+      scene.add(mesh);
+    }
+  });
 
   // Setup a material
   const earthMaterial = new THREE.MeshStandardMaterial({
@@ -77,7 +96,7 @@ const sketch = ({ context }) => {
   });
 
   const moonMesh = new THREE.Mesh(geometry, moonMaterial);
-  moonMesh.position.set(1.5, 1, 0);
+  moonMesh.position.set(1.5 * 2, 1, 0);
   moonMesh.scale.setScalar(0.25);
   moonGroup.add(moonMesh);
 

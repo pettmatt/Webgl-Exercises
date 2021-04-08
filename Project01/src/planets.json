@@ -6,7 +6,8 @@
     "speed": 0.0,
     "rotationSpeed": 0.0,
     "orbits": [false, ""],
-    "Moons": []
+    "moons": [],
+    "texture": "texture"
   },
   {
     "name": "Mercury",
@@ -15,13 +16,14 @@
     "speed": 47.87,
     "rotationSpeed": 10.83,
     "orbits": [true, "sun"],
-    "Moons": [
+    "moons": [
       { 
         "name": "",
         "distance": 0.0,
         "rotationSpeed": 0.0
       }
-    ]
+    ],
+    "texture": "texture"
   },
   {
     "name": "Venus",
@@ -30,13 +32,14 @@
     "speed": 35.02,
     "rotationSpeed": 6.52,
     "orbits": [true, "sun"],
-    "Moons": [
+    "moons": [
       { 
         "name": "",
         "distance": 0.0,
         "rotationSpeed": 0.0
       }
-    ]
+    ],
+    "texture": "texture"
   },
   {
     "name": "Earth",
@@ -45,13 +48,15 @@
     "speed": 29.78,
     "rotationSpeed": 1674,
     "orbits": [true, "sun"],
-    "Moons": [
+    "moons": [
       { 
-        "name": "Moon",
+        "name": "moon",
+        "size": 10.0,
         "distance": 0.0,
         "rotationSpeed": 0.0
       }
-    ]
+    ],
+    "texture": "texture"
   },
   {
     "name": "Mars",
@@ -60,13 +65,14 @@
     "speed": 24.077,
     "rotationSpeed": 866,
     "orbits": [true, "sun"],
-    "Moons": [
+    "moons": [
       { 
         "name": "",
         "distance": 0.0,
         "rotationSpeed": 0.0
       }
-    ]
+    ],
+    "texture": "texture"
   },
   {
     "name": "Jupiter",
@@ -75,13 +81,14 @@
     "speed": 13.07,
     "rotationSpeed": 45583,
     "orbits": [true, "sun"],
-    "Moons": [
+    "moons": [
       { 
         "name": "",
         "distance": 0.0,
         "rotationSpeed": 0.0
       }
-    ]
+    ],
+    "texture": "texture"
   },
   {
     "name": "Saturn",
@@ -90,13 +97,14 @@
     "speed": 9.69,
     "rotationSpeed": 36840,
     "orbits": [true, "sun"],
-    "Moons": [
+    "moons": [
       { 
         "name": "",
         "distance": 0.0,
         "rotationSpeed": 0.0
       }
-    ]
+    ],
+    "texture": "texture"
   },
   {
     "name": "Uranus",
@@ -105,13 +113,14 @@
     "speed": 6.81,
     "rotationSpeed": 14794,
     "orbits": [true, "sun"],
-    "Moons": [
+    "moons": [
       { 
         "name": "",
         "distance": 0.0,
         "rotationSpeed": 0.0
       }
-    ]
+    ],
+    "texture": "texture"
   },
   {
     "name": "Neptune",
@@ -120,13 +129,14 @@
     "speed": 5.43,
     "rotationSpeed": 9719,
     "orbits": [true, "sun"],
-    "Moons": [
+    "moons": [
       { 
         "name": "",
         "distance": 0.0,
         "rotationSpeed": 0.0
       }
-    ]
+    ],
+    "texture": "texture"
   },
   {
     "name": "Pluto",
@@ -135,12 +145,13 @@
     "speed": 4.74,
     "rotationSpeed": 123.21,
     "orbits": [true, "sun"],
-    "Moons": [
+    "moons": [
       { 
         "name": "",
         "distance": 0.0,
         "rotationSpeed": 0.0
       }
-    ]
+    ],
+    "texture": "texture"
   }
 ]
