@@ -1,0 +1,28 @@
+{
+  "name": "project02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "shader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start1": "canvas-sketch sketch01.js",
+    "start2": "canvas-sketch sketch02.js",
+    "start3": "canvas-sketch sketch03-noise.js",
+    "start4": "canvas-sketch sketch04.js",
+    "start5": "canvas-sketch sketch05.js",
+    "start6": "canvas-sketch sketch06.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bezier-easing": "^2.1.0",
+    "canvas-sketch": "^0.7.4",
+    "canvas-sketch-util": "^1.10.0",
+    "eases": "^1.0.8",
+    "glsl-hsl2rgb": "^1.1.0",
+    "glsl-noise": "0.0.0",
+    "nice-color-palettes": "^3.0.0",
+    "three": "^0.126.1"
+  }
+}

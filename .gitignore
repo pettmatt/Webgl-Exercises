@@ -2,4 +2,5 @@ node_modules/
 project01/node_modules/
 project02/node_modules/
 project03/node_modules/
+project01/
 .gitignore

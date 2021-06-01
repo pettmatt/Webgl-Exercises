@@ -4,6 +4,7 @@ global.THREE = require('three');
 require('three/examples/js/controls/OrbitControls');
 
 const canvasSketch = require('canvas-sketch');
+const funcs = require('./functions');
 const planets = require('./planets.json');
 
 const settings = {
@@ -28,7 +29,7 @@ const sketch = ({ context }) => {
   renderer.setClearColor('#000', 1);
 
   // Setup a camera
-  const camera = new THREE.PerspectiveCamera(500, 1, 0.01, 200);
+  const camera = new THREE.PerspectiveCamera(500, 1, 0.01, 1000);
   camera.position.set(3, 3, -5);
   camera.lookAt(new THREE.Vector3());
 
@@ -49,8 +50,9 @@ const sketch = ({ context }) => {
 
   // Create planets from the data inside of planets.json
   planets.forEach(planet => {
-    const geom = new THREE.SphereGeometry( planet.size * 0.1, 32, 16);
-    console.log(geom)
+    const geom = new THREE.SphereGeometry(funcs.ScaleDown(planet.size), 32, 16);
+
+    let distance = planet.distance * 0.001;
 
     const sunMaterial = new THREE.MeshStandardMaterial({
       roughness: 1,
@@ -60,7 +62,7 @@ const sketch = ({ context }) => {
 
     // Creating mesh with texture
     const mesh = new THREE.Mesh(geom, sunMaterial);
-    mesh.position.set(planet.distance*1000, 1, 0);
+    mesh.position.set(distance, 0, 0);
 
     console.log(planet.distance)
 
